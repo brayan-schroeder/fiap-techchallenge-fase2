@@ -1,5 +1,5 @@
 version: '3.9'
-name: techchallenge
+name: techchallenge2
 services:
   db:
     image: postgres:16
