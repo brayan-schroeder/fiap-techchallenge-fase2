@@ -175,12 +175,28 @@ class UserControllerIT
     @Test
     void shouldLogin() {
 
-        createUser();
+        String login =
+                "login" + System.nanoTime();
+
+
+        restTemplate.postForObject(
+                "/api/v1/users",
+                new CreateUserRequest(
+                        "User",
+                        System.nanoTime()
+                        + "@test.com",
+                        login,
+                        "123456",
+                        "Address",
+                        1L
+                ),
+                UserResponse.class
+        );
 
 
         LoginRequest request =
                 new LoginRequest(
-                        "brayan",
+                        login,
                         "123456"
                 );
 
