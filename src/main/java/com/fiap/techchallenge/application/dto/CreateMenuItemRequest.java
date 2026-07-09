@@ -29,7 +29,7 @@ public record CreateMenuItemRequest(
 
         @Schema(
                 description = "Item price",
-                example = "139,90"
+                example = "119.90"
         )
         @NotNull(message = "Price is required")
         @Positive(message = "Price must be greater than zero")

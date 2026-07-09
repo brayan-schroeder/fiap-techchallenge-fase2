@@ -1,418 +1,660 @@
 {
   "info": {
-    "_postman_id": "5cd152e6-c4c6-4b35-9ca3-6245eedd621e",
-    "name": "FIAP - Tech Challenge - Brayan Schroeder",
+    "_postman_id": "04966190-9bb4-4dac-924b-a45d8a72b906",
+    "name": "FIAP - Tech Challenge - FASE 2 - Brayan Schroeder",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "11173121",
-    "_collection_link": "https://go.postman.co/collection/11173121-5cd152e6-c4c6-4b35-9ca3-6245eedd621e?source=collection_link"
+    "_collection_link": "https://go.postman.co/collection/11173121-04966190-9bb4-4dac-924b-a45d8a72b906?source=collection_link"
   },
   "item": [
     {
-      "name": "Criar Usuário - VÁLIDO",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Accept",
-            "value": "*/*"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"email\": \"alunobrayan@fiap.com.br\",\n  \"login\": \"alunobrayan\",\n  \"name\": \"Brayan Schroeder\",\n  \"password\": \"123456\",\n  \"role\": \"OWNER\",\n  \"address\": \"Rua Exemplo, 123\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/v1/users",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "v1",
-            "users"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Criar Usuário - CAMPOS OBRIGATÓRIOS FALTANDO",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Accept",
-            "value": "*/*"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"email\": \"alunobrayan@fiap.com.br\",\n  \"login\": \"\",\n  \"password\": \"123456\",\n  \"role\": \"OWNER\",\n  \"address\": \"Rua Exemplo, 123\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/v1/users",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "v1",
-            "users"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Atualizar Usuário - SUCESSO",
-      "request": {
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Accept",
-            "value": "*/*"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"Brayan Schroeder\",\n  \"email\": \"alunobrayan@fiap.com.br\",\n  \"login\": \"alunobrayan\",\n  \"address\": \"Rua Exemplo, 303\",\n  \"role\": \"OWNER\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/v1/users/1",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "v1",
-            "users",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Atualizar Usuário - ERRO",
-      "request": {
-        "method": "PUT",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Accept",
-            "value": "*/*"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"name\": \"Brayan Schroeder\",\n  \"email\": \"\",\n  \"login\": \"\",\n  \"address\": \"Rua Exemplo, 303\",\n  \"role\": \"OWNER\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/v1/users/1",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "v1",
-            "users",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Excluir Usuário",
-      "request": {
-        "method": "DELETE",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Accept",
-            "value": "*/*"
-          }
-        ],
-        "url": {
-          "raw": "http://localhost:8080/api/v1/users/1",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "v1",
-            "users",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Atualizar Senha - SUCESSO",
-      "request": {
-        "method": "PATCH",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Accept",
-            "value": "*/*"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"password\": \"123456\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/v1/users/1/password",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "v1",
-            "users",
-            "1",
-            "password"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Atualizar Senha - ERRO",
-      "request": {
-        "method": "PATCH",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Accept",
-            "value": "*/*"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"password\": \"\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/v1/users/1/password",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "v1",
-            "users",
-            "1",
-            "password"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Login",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Accept",
-            "value": "*/*"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"login\": \"alunobrayan\",\n  \"password\": \"123456\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/v1/users/login",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "v1",
-            "users",
-            "login"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Listar Usuário",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Accept",
-            "value": "*/*"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"email\": \"alunobrayan@fiap.com.br\",\n  \"login\": \"alunobrayan\",\n  \"name\": \"Brayan Schroeder\",\n  \"password\": \"123456\",\n  \"role\": \"OWNER\",\n  \"address\": \"Rua Exemplo, 123\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/v1/users/1",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "v1",
-            "users",
-            "1"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "Listar Usuários",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Accept",
-            "value": "*/*"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"email\": \"alunobrayan@fiap.com.br\",\n  \"login\": \"alunobrayan\",\n  \"name\": \"Brayan Schroeder\",\n  \"password\": \"123456\",\n  \"role\": \"OWNER\",\n  \"address\": \"Rua Exemplo, 123\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/v1/users",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "v1",
-            "users"
-          ],
-          "query": [
-            {
-              "key": "name",
-              "value": "",
-              "disabled": true
+      "name": "User Type",
+      "item": [
+        {
+          "name": "Find By Id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/user-types/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "user-types",
+                "1"
+              ]
             }
-          ]
+          },
+          "response": []
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"TESTE\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/user-types",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "user-types"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"TESTE UPDATE\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/user-types/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "user-types",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/user-types/3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "user-types",
+                "3"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/user-types",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "user-types"
+              ]
+            }
+          },
+          "response": []
         }
-      },
-      "response": []
+      ]
     },
     {
-      "name": "Listar Usuários - EXEMPLO FILTRANDO POR NOME",
-      "protocolProfileBehavior": {
-        "disableBodyPruning": true
-      },
-      "request": {
-        "method": "GET",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "application/json"
-          },
-          {
-            "key": "Accept",
-            "value": "*/*"
-          }
-        ],
-        "body": {
-          "mode": "raw",
-          "raw": "{\n  \"email\": \"alunobrayan@fiap.com.br\",\n  \"login\": \"alunobrayan\",\n  \"name\": \"Brayan Schroeder\",\n  \"password\": \"123456\",\n  \"role\": \"OWNER\",\n  \"address\": \"Rua Exemplo, 123\"\n}"
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/v1/users?name=Schroeder",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "v1",
-            "users"
-          ],
-          "query": [
-            {
-              "key": "name",
-              "value": "Schroeder"
+      "name": "User",
+      "item": [
+        {
+          "name": "Find By Id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "1"
+              ]
             }
-          ]
+          },
+          "response": []
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"email\": \"alunobrayan@fiap.com.br\",\r\n  \"login\": \"alunobrayan\",\r\n  \"name\": \"Brayan Schroeder\",\r\n  \"password\": \"123456\",\r\n  \"userTypeId\": 1,\r\n  \"address\": \"Rua Exemplo, 123\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Brayan Schroeder\",\r\n  \"email\": \"alunobrayan@fiap.com.br\",\r\n  \"login\": \"alunobrayan\",\r\n  \"address\": \"Rua Nova, 456\",\r\n  \"userTypeId\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Schroeder",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"login\": \"alunobrayan\",\r\n  \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Change Password",
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"password\": \"1234567\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/users/2/password",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "users",
+                "2",
+                "password"
+              ]
+            }
+          },
+          "response": []
         }
-      },
-      "response": []
-    }
-  ],
-  "variable": [
+      ]
+    },
     {
-      "key": "url",
-      "value": "https://d957cc78-59d4-4e57-ac8a-95e597d9bee5.mock.pstmn.io"
+      "name": "Restaurant",
+      "item": [
+        {
+          "name": "Find By Id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "restaurants",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Tempero de Vó\",\r\n  \"address\": \"Rua Exemplo, 123\",\r\n  \"cuisineType\": \"Comida mineira\",\r\n  \"openingHours\": \"De segunda a sexta, 11:30h até 15:00h\",\r\n  \"ownerId\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "restaurants"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Sushi do Bairro\",\r\n  \"address\": \"Rua Exemplo, 456\",\r\n  \"cuisineType\": \"Comida japonesa\",\r\n  \"openingHours\": \"De terça a sábado, 18:30h até 23:00h\",\r\n  \"ownerId\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "restaurants",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "restaurants",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/restaurants",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "restaurants"
+              ],
+              "query": [
+                {
+                  "key": "name",
+                  "value": "Sushi",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Menu Item",
+      "item": [
+        {
+          "name": "Find By Id",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "*/*"
+              }
+            ],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/menu-items/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "menu-items",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Salmão com molho de maracujá\",\r\n  \"description\": \"Salmão ao molho de maracujá com acompanhamento de arroz, pirão e salada\",\r\n  \"price\": 139.90,\r\n  \"onlyLocalConsumption\": true,\r\n  \"imagePath\": \"mysite.com/imagem-aleatoria\",\r\n  \"restaurantId\": 2\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/menu-items",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "menu-items"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"name\": \"Salmão com molho de maracujá\",\r\n  \"description\": \"Salmão ao molho de maracujá com acompanhamento de arroz, pirão e salada\",\r\n  \"price\": 119.90,\r\n  \"onlyLocalConsumption\": true,\r\n  \"imagePath\": \"mysite.com/imagem-aleatoria\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/v1/menu-items/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "menu-items",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/menu-items/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "menu-items",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "List",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/v1/menu-items?restaurantId=2",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "v1",
+                "menu-items"
+              ],
+              "query": [
+                {
+                  "key": "restaurantId",
+                  "value": "2"
+                },
+                {
+                  "key": "name",
+                  "value": "Salmão",
+                  "type": "text",
+                  "disabled": true
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
     }
   ]
 }
