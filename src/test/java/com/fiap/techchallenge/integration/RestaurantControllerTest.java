@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
         webEnvironment =
                 SpringBootTest.WebEnvironment.RANDOM_PORT
 )
-class RestaurantControllerIT
+class RestaurantControllerTest
         extends IntegrationTestBase {
 
 
