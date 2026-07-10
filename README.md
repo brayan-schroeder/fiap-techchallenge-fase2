@@ -227,3 +227,11 @@ Principais tabelas:
 ## 📌 Repositório GitHub
 
 https://github.com/brayan-schroeder/fiap-techchallenge-fase2
+
+---
+
+## 📹 Vídeo de Demonstração
+
+Clique na imagem abaixo para assistir à explicação do projeto:
+
+[![Vídeo de Demonstração](https://img.youtube.com/vi/BpFR-NdaVXk/maxresdefault.jpg)](https://www.youtube.com/watch?v=BpFR-NdaVXk)
